@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class="ui raised segment padded container">
+    <h1 class="ui header">Create a new animal</h1>
+    <form action="/animals" method="POST" class="ui form">
+        <div class="field">
+            <label>Name</label>
+            <input name="animal[name]" type="text" placeholder="Snowy Owl" required></input>        
+        </div>
+        <div class="field">
+            <label>Image URL</label>
+            <input name="animal[image]" type="text" placeholder="http://bit.ly/2efacTA" required></input>
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea name="animal[desc]" placeholder="The snowy owl (Bubo scandiacus) is a large, white owl of the typical owl family. Snowy owls are native to Arctic regions in North America and Eurasia. Males are almost all white, while females have more flecks of black plumage. Juvenile snowy owls have black feathers until they turn white. The snowy owl is a ground nester that predominantly hunts rodents." required></textarea>        
+        </div>
+        <input class="ui inverted green button" type="submit"></input>
+    </form>
+</div>
+
+<% include partials/footer %>

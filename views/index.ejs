@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="ui raised segment padded container">
+    <h1 class="header">All Dangerous Animals</h1>
+    <div class="ui items">
+        <% animals.forEach(function(animal) { %>
+            <div class="item">
+                <div class="image">
+                    <img class="ui medium rounded image" src="<%= animal.image %>" />
+                </div>
+                <div class="content">
+                    <a class="header" href="/animals/<%= animal._id %>"><%= animal.name %></a>                
+                    <div class="meta">
+                        <p>Posted on: <%= animal.created.toLocaleDateString() %></p>
+                    </div>
+                    <div class="description">
+                        <p><%= animal.desc.substring(0, 100) %>...</p>                                                
+                    </div>
+                    <div class="extra">
+                        <a class="ui inverted violet button read_more_button" href="/animals/<%= animal._id %>">Read More</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+<% include partials/footer %>

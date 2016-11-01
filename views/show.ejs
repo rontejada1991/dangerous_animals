@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<div class="ui raised segment padded container">
+    <h1 class="header"><%= animal.name %></h1>
+    <p class="ui label">Posted on: <%= animal.created.toLocaleDateString() %></p>
+    <img class="ui image segment" src="<%= animal.image %>" />
+    <p><%= animal.desc %></p>
+    <a class="ui inverted yellow button" href="/animals/<%= animal._id %>/edit">Edit</a>
+    <form id="delete_form" action="/animals/<%= animal._id %>?_method=DELETE" method="POST">
+        <button class="ui inverted red button">Delete</button>
+    </form>
+</div>
+
+<% include partials/footer %>
